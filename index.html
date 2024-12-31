@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Frohes neues Jahr!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-text">
+            <h1>Merry Christmas!</h1>
+            <div class="fireworks"></div>
+        </div>
+        
+        <div class="wishes-section">
+            <h2>Neujahrswünsche</h2>
+            <div class="wishes-text">
+                <p>Liebe Freunde,</p>
+                
+                <p>Das neue Jahr bedeutet neue Hoffnungen und neuer Anfang. Ich wünsche uns allen Gesundheit, Glück und Frieden für das Jahr 2025.</p>
+                
+                <p>Lasst uns die Erschöpfung des vergangenen Jahres vergessen und ich hoffe, dass ihr im neuen Jahr eure Träume verwirklicht und ein glückliches und gesundes Jahr mit euren Lieben verbringt. 🎄✨🎅</p>
+                
+                <p>Wenn Sie mir eine Nachricht hinterlassen möchten, können Sie diese über den Kontaktbereich senden.</p>
+                
+                <p class="signature">Mit besten Grüßen,<br>Erdi</p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="contact-button">
+                <button id="contactBtn">Kontakt</button>
+            </div>
+            <div class="social-media">
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/erdiisbht/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/erdisabahat/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/erdiisbht/" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="contact">
+                <h3>Kontakt</h3>
+                <form class="contact-form" id="contactForm" 
+                      action="https://api.web3forms.com/submit" 
+                      method="POST">
+                    <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY">
+                    <input type="hidden" name="_subject" value="Nachricht von der Neujahrsseite">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://sizin-siteniz.com/danke.html">
+
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Ihr Vorname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Ihre Nachricht..." required></textarea>
+                    </div>
+                    <button type="submit">Senden</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

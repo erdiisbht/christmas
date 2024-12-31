@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/kar.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #e6f3ff;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(230, 243, 255, 0.3), rgba(230, 243, 255, 0.5));
+    z-index: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 80px;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.welcome-text {
+    text-align: right;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    width: 90%;
+    margin: 30px 0 0 auto;
+}
+
+.welcome-text h1 {
+    font-size: 4.5em;
+    background: linear-gradient(45deg, #ff0000, #ff6b6b, #ff4040, #ff1a1a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 6px rgba(255, 0, 0, 0.3);
+    animation: colorChange 4s infinite;
+    margin-bottom: 30px;
+}
+
+.wishes-section {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0 40px auto;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 1;
+}
+
+.wishes-section h2 {
+    color: #ff0000;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.wishes-text {
+    padding: 20px;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+
+.wishes-text p {
+    margin-bottom: 15px;
+}
+
+.wishes-text .signature {
+    margin-top: 25px;
+    text-align: right;
+    font-style: italic;
+    color: #ff4040;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.contact-button button {
+    background: #ff4040;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+.contact-button button:hover {
+    background: #ff6060;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-media a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ff4040;
+}
+
+/* Sosyal medya ikonları için özel renkler */
+.social-media a[title="LinkedIn"]:hover {
+    color: #0077b5;
+}
+
+.social-media a[title="GitHub"]:hover {
+    color: #6e5494;
+}
+
+.social-media a[title="Facebook"]:hover {
+    color: #1877f2;
+}
+
+.social-media a[title="Twitter"]:hover {
+    color: #1da1f2;
+}
+
+.social-media a[title="Instagram"]:hover {
+    color: #e4405f;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    text-shadow: 0 0 5px rgba(255,255,255,0.8);
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.8;
+}
+
+.snowflake:nth-of-type(2n) {
+    content: "❆";
+}
+
+.snowflake:nth-of-type(3n) {
+    content: "❅";
+}
+
+.snowflake:nth-of-type(4n) {
+    content: "❄";
+}
+
+@keyframes colorChange {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(30deg); }
+    100% { filter: hue-rotate(0deg); }
+}
+
+/* Modal stilleri */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background: rgba(255,255,255,0.95);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close:hover {
+    color: #ff4040;
+}
+
+@media screen and (max-width: 768px) {
+    .welcome-text h1 {
+        font-size: 2.8em;
+        margin-bottom: 15px;
+    }
+
+    .wishes-section {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .wishes-text {
+        padding: 15px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 15% auto;
+        padding: 15px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    .social-media {
+        gap: 12px;
+    }
+
+    .social-media a {
+        font-size: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .contact-form textarea {
+        height: 100px;
+    }
+
+    .container {
+        padding-bottom: 120px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .welcome-text h1 {
+        font-size: 2.5em;
+    }
+
+    .container {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .wishes-section h2 {
+        font-size: 1.5em;
+    }
+
+    .wishes-text {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    /* Form elemanlarını mobil için optimize et */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .modal-content {
+        margin: 30% auto;
+    }
+
+    /* Kar tanelerini azalt */
+    .snowflake {
+        font-size: 0.8em;
+    }
+}
+
+/* iPhone SE gibi küçük ekranlar için */
+@media screen and (max-width: 375px) {
+    .welcome-text h1 {
+        font-size: 2.2em;
+    }
+
+    .wishes-section {
+        width: 98%;
+        padding: 10px;
+    }
+
+    .modal-content {
+        margin: 10% auto;
+        padding: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+    }
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff4040;
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4040;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff6060;
+}
+
+/* Hata mesajları için stil */
+.form-error {
+    color: #ff4040;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Yatay mod için düzenlemeler */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .welcome-text h1 {
+        font-size: 2.5em;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .contact-form textarea {
+        height: 60px;
+    }
+}
